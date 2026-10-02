@@ -137,14 +137,15 @@ const [first,...rest]=p.name.split(' ');
 const mapUrl='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(p.location);
 $('#app').innerHTML=`<div class="wrap">
 <div class="top"><nav class="nav" aria-label="Sections"><button data-go="top" class="on">Home</button><button data-go="work">Work</button><button data-go="projects">Projects</button><button data-go="skills">Skills</button><button data-go="more">More</button></nav>
-<div class="dots" role="group" aria-label="Accent colour"><button data-acc="#2f7bf5" data-n="Blue" aria-label="Blue accent" class="on" style="color:#2f7bf5"><i style="background:#2f7bf5"></i></button><button data-acc="#e8366a" data-n="Pink" aria-label="Pink accent" style="color:#e8366a"><i style="background:#e8366a"></i></button><button data-acc="#e0a800" data-n="Yellow" aria-label="Yellow accent" style="color:#e0a800"><i style="background:#ffc619"></i></button><button data-acc="#34a853" data-n="Green" aria-label="Green accent" style="color:#34a853"><i style="background:#34a853"></i></button></div></div>
-<header class="hero" id="top"><div><h1>${letters(first,0)}<span>${letters(rest.join(' '),first.length)}</span></h1><p>${esc(p.title)}.
+<div class="dots" role="group" aria-label="Accent colour"><button data-acc="#2f7bf5" data-n="Blue" aria-label="Blue accent" class="on" style="color:#2f7bf5"><i style="background:#2f7bf5"></i></button><button data-acc="#e8366a" data-n="Pink" aria-label="Pink accent" style="color:#e8366a"><i style="background:#e8366a"></i></button><button data-acc="#e0a800" data-n="Yellow" aria-label="Yellow accent" style="color:#e0a800"><i style="background:#ffc619"></i></button><button data-acc="#34a853" data-n="Green" aria-label="Green accent" style="color:#34a853"><i style="background:#34a853"></i></button>
 
 <div class="tile reveal"><div class="btns">
 <button class="btn" data-copy="${esc(p.email)}" data-l="Email" aria-label="Copy email ${esc(p.email)}" title="Copy email" style="color:var(--acc)">${I.mail}</button>
 <button class="btn" data-copy="${esc(p.phone)}" data-l="Phone" aria-label="Copy phone ${esc(p.phone)}" title="Copy phone" style="color:var(--green)">${I.phone}</button>
 <a class="btn" href="${mapUrl}" target="_blank" rel="noopener" aria-label="Open ${esc(p.location)} in maps" title="Open map" style="color:var(--muted)">${I.pin}</a>
 <button class="btn" data-notice aria-label="Notice period" title="Notice period" style="color:var(--pink)">${I.clock}</button></div></div>
+</div></div>
+<header class="hero" id="top"><div><h1>${letters(first,0)}<span>${letters(rest.join(' '),first.length)}</span></h1><p>${esc(p.title).
 ${esc(p.summary)}</p></div>
 <div class="big"><b data-count="${parseInt(p.experience)}">0</b><span>years<br>experience</span>
 
